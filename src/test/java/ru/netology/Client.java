@@ -1,5 +1,6 @@
 package ru.netology;
 
+import io.restassured.RestAssured;
 import jdk.jfr.DataAmount;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -8,6 +9,7 @@ import lombok.Data;
 @AllArgsConstructor
 public class Client {
     private String login;
-    private int password;
+    private String password;
+    private String status;
 
 }
