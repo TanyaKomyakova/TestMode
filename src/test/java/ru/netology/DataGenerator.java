@@ -55,14 +55,23 @@ public class DataGenerator {
         public static Client generateBlockedClient(){
             Client client = new Client(generateLogin(), generatePassword(), "blocked");
             setUpAll(client);
-            return null;
-        }
-
-        public static Client generateInvalidPasswordClient(){
-            Client client = new Client(generateLogin(), generatePassword(), "active");
-            setUpAll(client);
             return client;
         }
+
+        public static Client generateInvalidClientLogin(){
+            String login = generateLogin();
+            Client client = new Client(login, generatePassword(), "active");
+            setUpAll(client);
+            return new Client(login,generatePassword(),"active");
+        }
+
+        public static Client generateInvalidClientPassword(){
+            String password = generatePassword();
+            Client client = new Client(generateLogin(),password,"active");
+            setUpAll(client);
+            return new Client(generateLogin(),password,"active");
+        }
+
 
 
 
